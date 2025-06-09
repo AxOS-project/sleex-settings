@@ -1,0 +1,555 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="Adw" version="1.0"/>
+  <template class="SleexSettingsWindow" parent="AdwPreferencesWindow">
+    <property name="default-width">800</property>
+    <property name="default-height">600</property>
+    <property name="resizable">true</property>
+    <property name="title">Sleex Settings</property>
+
+    <!-- AI Settings Page -->
+    <child>
+      <object class="AdwPreferencesPage">
+        <property name="title">AI</property>
+        <property name="icon-name">settings-symbolic</property>
+
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title">AI Configuration</property>
+            <property name="description">Configure AI provider and behavior settings.</property>
+            
+            <child>
+              <object class="AdwEntryRow" id="ai_default_gpt_provider">
+                <property name="title">Default GPT Provider</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwSpinRow" id="ai_default_temperature">
+                <property name="title">Default Temperature</property>
+                <property name="adjustment">
+                  <object class="GtkAdjustment">
+                    <property name="lower">0</property>
+                    <property name="upper">2</property>
+                    <property name="step-increment">0.1</property>
+                    <property name="value">0.9</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwSwitchRow" id="ai_enhancements">
+                <property name="title">AI Enhancements</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwSwitchRow" id="ai_use_history">
+                <property name="title">Use History</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwSwitchRow" id="ai_safety">
+                <property name="title">Safety Mode</property>
+              </object>
+            </child>
+
+          </object>
+        </child>
+      </object>
+    </child>
+
+    <!-- Animations Settings Page -->
+    <child>
+      <object class="AdwPreferencesPage">
+        <property name="title">Animations</property>
+        <property name="icon-name">settings-symbolic</property>
+
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title">Animation Settings</property>
+            <property name="description">Configure animation timing and behavior.</property>
+            
+            <child>
+              <object class="AdwSpinRow" id="animations_choreography_delay">
+                <property name="title">Choreography Delay</property>
+                <property name="adjustment">
+                  <object class="GtkAdjustment">
+                    <property name="lower">0</property>
+                    <property name="upper">100</property>
+                    <property name="step-increment">1</property>
+                    <property name="value">35</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwSpinRow" id="animations_duration_small">
+                <property name="title">Small Animation Duration</property>
+                <property name="adjustment">
+                  <object class="GtkAdjustment">
+                    <property name="lower">0</property>
+                    <property name="upper">500</property>
+                    <property name="step-increment">10</property>
+                    <property name="value">110</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwSpinRow" id="animations_duration_large">
+                <property name="title">Large Animation Duration</property>
+                <property name="adjustment">
+                  <object class="GtkAdjustment">
+                    <property name="lower">0</property>
+                    <property name="upper">500</property>
+                    <property name="step-increment">10</property>
+                    <property name="value">180</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+
+          </object>
+        </child>
+      </object>
+    </child>
+
+    <!-- Appearance Settings Page -->
+    <child>
+      <object class="AdwPreferencesPage">
+        <property name="title">Appearance</property>
+        <property name="icon-name">settings-symbolic</property>
+
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title">Appearance Settings</property>
+            <property name="description">Configure visual appearance and display options.</property>
+            
+            <child>
+              <object class="AdwSwitchRow" id="appearance_auto_dark_mode">
+                <property name="title">Auto Dark Mode</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwSwitchRow" id="appearance_keyboard_use_flag">
+                <property name="title">Keyboard Use Flag</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwSwitchRow" id="appearance_layer_smoke">
+                <property name="title">Layer Smoke Effect</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwSwitchRow" id="appearance_show_monitor">
+                <property name="title">Show Monitor</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwSwitchRow" id="appearance_show_time_date">
+                <property name="title">Show Time/Date</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwSwitchRow" id="appearance_show_win_title">
+                <property name="title">Show Window Title</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwSwitchRow" id="appearance_show_workspace">
+                <property name="title">Show Workspace</property>
+              </object>
+            </child>
+
+          </object>
+        </child>
+      </object>
+    </child>
+
+    <!-- Applications Settings Page -->
+    <child>
+      <object class="AdwPreferencesPage">
+        <property name="title">Applications</property>
+        <property name="icon-name">settings-symbolic</property>
+
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title">Default Applications</property>
+            <property name="description">Configure default applications for various tasks.</property>
+            
+            <child>
+              <object class="AdwEntryRow" id="apps_bluetooth">
+                <property name="title">Bluetooth Manager</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwEntryRow" id="apps_image_viewer">
+                <property name="title">Image Viewer</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwEntryRow" id="apps_network">
+                <property name="title">Network Manager</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwEntryRow" id="apps_settings">
+                <property name="title">Settings Application</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwEntryRow" id="apps_task_manager">
+                <property name="title">Task Manager</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwEntryRow" id="apps_terminal">
+                <property name="title">Terminal</property>
+              </object>
+            </child>
+
+          </object>
+        </child>
+      </object>
+    </child>
+
+    <!-- Battery Settings Page -->
+    <child>
+      <object class="AdwPreferencesPage">
+        <property name="title">Battery</property>
+        <property name="icon-name">settings-symbolic</property>
+
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title">Battery Thresholds</property>
+            <property name="description">Configure battery warning and suspend thresholds.</property>
+            
+            <child>
+              <object class="AdwSpinRow" id="battery_low">
+                <property name="title">Low Battery Threshold (%)</property>
+                <property name="adjustment">
+                  <object class="GtkAdjustment">
+                    <property name="lower">5</property>
+                    <property name="upper">50</property>
+                    <property name="step-increment">1</property>
+                    <property name="value">20</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwSpinRow" id="battery_critical">
+                <property name="title">Critical Battery Threshold (%)</property>
+                <property name="adjustment">
+                  <object class="GtkAdjustment">
+                    <property name="lower">1</property>
+                    <property name="upper">25</property>
+                    <property name="step-increment">1</property>
+                    <property name="value">10</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwSpinRow" id="battery_suspend_threshold">
+                <property name="title">Suspend Threshold (%)</property>
+                <property name="adjustment">
+                  <object class="GtkAdjustment">
+                    <property name="lower">1</property>
+                    <property name="upper">15</property>
+                    <property name="step-increment">1</property>
+                    <property name="value">3</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+
+          </object>
+        </child>
+      </object>
+    </child>
+
+    <!-- Overview Settings Page -->
+    <child>
+      <object class="AdwPreferencesPage">
+        <property name="title">Overview</property>
+        <property name="icon-name">settings-symbolic</property>
+
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title">Overview Layout</property>
+            <property name="description">Configure the overview window layout and scale.</property>
+            
+            <child>
+              <object class="AdwSpinRow" id="overview_scale">
+                <property name="title">Scale</property>
+                <property name="adjustment">
+                  <object class="GtkAdjustment">
+                    <property name="lower">0.1</property>
+                    <property name="upper">1.0</property>
+                    <property name="step-increment">0.01</property>
+                    <property name="value">0.18</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwSpinRow" id="overview_num_of_rows">
+                <property name="title">Number of Rows</property>
+                <property name="adjustment">
+                  <object class="GtkAdjustment">
+                    <property name="lower">1</property>
+                    <property name="upper">10</property>
+                    <property name="step-increment">1</property>
+                    <property name="value">2</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwSpinRow" id="overview_num_of_cols">
+                <property name="title">Number of Columns</property>
+                <property name="adjustment">
+                  <object class="GtkAdjustment">
+                    <property name="lower">1</property>
+                    <property name="upper">10</property>
+                    <property name="step-increment">1</property>
+                    <property name="value">5</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+
+          </object>
+        </child>
+      </object>
+    </child>
+
+    <!-- Search Settings Page -->
+    <child>
+      <object class="AdwPreferencesPage">
+        <property name="title">Search</property>
+        <property name="icon-name">settings-symbolic</property>
+
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title">Search Features</property>
+            <property name="description">Enable or disable search features.</property>
+            
+            <child>
+              <object class="AdwSwitchRow" id="search_enable_actions">
+                <property name="title">Enable Actions</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwSwitchRow" id="search_enable_commands">
+                <property name="title">Enable Commands</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwSwitchRow" id="search_enable_maths">
+                <property name="title">Enable Math Results</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwSwitchRow" id="search_enable_directory">
+                <property name="title">Enable Directory Search</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwSwitchRow" id="search_enable_ai">
+                <property name="title">Enable AI Search</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwSwitchRow" id="search_enable_web">
+                <property name="title">Enable Web Search</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwEntryRow" id="search_engine_base_url">
+                <property name="title">Search Engine Base URL</property>
+              </object>
+            </child>
+
+          </object>
+        </child>
+      </object>
+    </child>
+
+    <!-- Time Settings Page -->
+    <child>
+      <object class="AdwPreferencesPage">
+        <property name="title">Time</property>
+        <property name="icon-name">settings-symbolic</property>
+
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title">Time Configuration</property>
+            <property name="description">Configure time and date display formats.</property>
+            
+            <child>
+              <object class="AdwActionRow">
+                <property name="title">Time Format</property>
+                <child type="suffix">
+                  <object class="GtkDropDown" id="time_format">
+                    <property name="enable-search">false</property>
+                    <property name="halign">3</property>
+                    <property name="valign">3</property>
+                    <property name="model">
+                      <object class="GtkStringList">
+                        <items>
+                          <item>%H:%M</item>
+                          <item>%I:%M</item>
+                          <item>%I:%M %p</item>
+                        </items>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwSpinRow" id="time_interval">
+                <property name="title">Update Interval (ms)</property>
+                <property name="adjustment">
+                  <object class="GtkAdjustment">
+                    <property name="lower">1000</property>
+                    <property name="upper">60000</property>
+                    <property name="step-increment">1000</property>
+                    <property name="value">5000</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwActionRow">
+                <property name="title">Date Format</property>
+                <child type="suffix">
+                  <object class="GtkDropDown" id="time_date_format">
+                    <property name="enable-search">false</property>
+                    <property name="halign">3</property>
+                    <property name="valign">3</property>
+                    <property name="model">
+                      <object class="GtkStringList">
+                        <items>
+                          <item>%d/%m</item>
+                          <item>%a %d %b</item>
+                          <item>%d %B %Y</item>
+                          <item>%Y-%m-%d</item>
+                          <item>%A %d</item>
+                          <item>%b %d, %Y</item>
+                          <item>%d/%m/%Y</item>
+                          <item>%d · %b</item>
+                          <item>%dᵉ %B</item>
+                        </items>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+              </object>
+            </child>
+
+          </object>
+        </child>
+      </object>
+    </child>
+
+    <!-- Weather Settings Page -->
+    <child>
+      <object class="AdwPreferencesPage">
+        <property name="title">Weather</property>
+        <property name="icon-name">settings-symbolic</property>
+
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title">Weather Configuration</property>
+            <property name="description">Configure weather display preferences.</property>
+            
+            <child>
+              <object class="AdwActionRow">
+                <property name="title">Preferred Unit</property>
+                <child type="suffix">
+                  <object class="GtkDropDown" id="weather_preferred_unit">
+                    <property name="enable-search">false</property>
+                    <property name="halign">3</property>
+                    <property name="valign">3</property>
+                    <property name="model">
+                      <object class="GtkStringList">
+                        <items>
+                          <item>C</item>
+                          <item>F</item>
+                        </items>
+                      </object>
+                    </property>
+                  </object>
+                </child>
+              </object>
+            </child>
+
+          </object>
+        </child>
+      </object>
+    </child>
+
+    <!-- Workspace Settings Page -->
+    <child>
+      <object class="AdwPreferencesPage">
+        <property name="title">Workspaces</property>
+        <property name="icon-name">settings-symbolic</property>
+
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title">Workspace Configuration</property>
+            <property name="description">Configure workspace display settings.</property>
+            
+            <child>
+              <object class="AdwSpinRow" id="workspaces_shown">
+                <property name="title">Number of Workspaces Shown</property>
+                <property name="adjustment">
+                  <object class="GtkAdjustment">
+                    <property name="lower">1</property>
+                    <property name="upper">20</property>
+                    <property name="step-increment">1</property>
+                    <property name="value">10</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+
+          </object>
+        </child>
+      </object>
+    </child>
+
+  </template>
+</interface>

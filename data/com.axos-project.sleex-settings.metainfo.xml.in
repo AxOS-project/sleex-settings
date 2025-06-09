@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.axos-project.sleex-settings</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <name>Sleex-settings</name>
+  <summary>Simple settings app to configure the Sleex environment</summary>
+  <description>
+    <p>Simple settings app to configure the Sleex environment</p>
+  </description>
+
+  <developer id="tld.vendor">
+    <name>Ardox</name>
+  </developer>
+
+  <url type="homepage">https://github.com/axos-project/</url>
+
+  <translation type="gettext">sleex-settings</translation>
+
+  <launchable type="desktop-id">com.axos-project.sleex-settings.desktop</launchable>
+
+  <content_rating type="oars-1.1" />
+
+
+  <branding>
+    <color type="primary" scheme_preference="light">#873094</color>
+    <color type="primary" scheme_preference="dark">#873094</color>
+  </branding>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://example.org/example1.png</image>
+      <caption>A caption</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://example.org/example2.png</image>
+      <caption>A caption</caption>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="1.0.1" date="2024-01-18">
+      <url type="details">https://example.org/changelog.html#version_1.0.1</url>
+      <description translate="no">
+        <p>Release description</p>
+        <ul>
+          <li>List of changes</li>
+          <li>List of changes</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+
+</component>

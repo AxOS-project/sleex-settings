@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Sleex Setting App
+Exec=sleex-settings
+Icon=axos-logo
+Terminal=false
+Type=Application
+Categories=Utility;
+Keywords=GTK;
+StartupNotify=true
+DBusActivatable=true

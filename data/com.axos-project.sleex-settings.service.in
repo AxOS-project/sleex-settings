@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=com.axos-project.sleex-settings
+Exec=@bindir@/sleex-settings --gapplication-service

@@ -1,0 +1,8 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+data/com.axos-project.sleex-settings.desktop.in
+data/com.axos-project.sleex-settings.metainfo.xml.in
+data/com.axos-project.sleex-settings.gschema.xml
+src/main.py
+src/window.py
+src/window.ui
