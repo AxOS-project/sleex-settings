@@ -67,9 +67,9 @@ class SleexSettingsApplication(Adw.Application):
             application_name="Sleex Settings App",
             developer_name="Ardox",
             version="0.1.0",
-            website="https://github.com/axos-project/",
-            issue_url="https://github.com/axos-project/",
-            support_url="https://github.com/axos-project/",
+            website="https://github.com/axos-project/sleex-settings",
+            issue_url="https://github.com/axos-project/sleex-settings/issues",
+            support_url="https://github.com/axos-project/sleex-settings/issues",
             copyright="© 2025 Ardox",
             license_type=Gtk.License.GPL_3_0_ONLY
         )
