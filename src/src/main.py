@@ -19,14 +19,7 @@
 
 import sys
 import gi
-import subprocess
 import os
-import threading
-import json
-import pathlib
-import shutil
-import shlex
-import time
 
 gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
@@ -43,7 +36,7 @@ class SleexSettingsApplication(Adw.Application):
     path_name = pathname # Path of Application
     homeFolder = os.path.expanduser('~') # Path to home folder
     sleex_config_dir = homeFolder + "/.sleex/"
-    config_file = "/usr/share/sleex/modules/.configuration/default_config.json"
+    config_file = sleex_config_dir + 'settings.json' if os.path.exists(sleex_config_dir + 'settings.json') else "/usr/share/sleex/modules/.configuration/default_config.json"
 
     def __init__(self):
         super().__init__(application_id='com.axos-project.sleex-settings',

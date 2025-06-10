@@ -26,6 +26,7 @@ import json
 @Gtk.Template(resource_path='/com/axos-project/sleex-settings/window.ui')
 class SleexSettingsWindow(Adw.PreferencesWindow):
     __gtype_name__ = 'SleexSettingsWindow'
+    
 
     # Get script path
     pathname = os.path.dirname(sys.argv[0])
@@ -33,13 +34,14 @@ class SleexSettingsWindow(Adw.PreferencesWindow):
     path_name = pathname # Path of Application
     homeFolder = os.path.expanduser('~') # Path to home folder
     sleex_settings_path = homeFolder + "/.sleex/"
+    config_file = sleex_settings_path + 'settings.json' if os.path.exists(sleex_settings_path + 'settings.json') else "/usr/share/sleex/modules/.configuration/default_config.json"
 
-    with open("/usr/share/sleex/modules/.configuration/default_config.json", "r") as f:
+    with open(config_file, "r") as f:
         settings = json.load(f)
 
     def replace_json_field(self, field_root, new_value):
         try:
-            with open("/usr/share/sleex/modules/.configuration/default_config.json", 'r+') as file:
+            with open(self.config_file, 'r+') as file:
                 data = json.load(file)
                 current = data
                 for key in field_root.split('.')[:-1]:
